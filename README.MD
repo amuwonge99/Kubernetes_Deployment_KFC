@@ -1,0 +1,1 @@
+Muhammad abandoned us
