@@ -4,7 +4,13 @@
 #Internet routing (public + private subnets, NAT gateway)
 #
 
-terraform {
+terraform { 
+
+    backend "s3" {
+    bucket         = "kfc-bucket-for-mo-to-enjoy"
+    key            = "eks/terraform.tfstate"
+    region         = "eu-west-2"
+   }
   
   required_version = ">= 1.3"
   required_providers {
@@ -71,7 +77,7 @@ image_scanning_configuration {
     }
 
 resource "aws_s3_bucket" "app_bucket" {
-  bucket = "kfc-bucket-for-henry-to-enjoy"
+  bucket = "kfc-bucket-for-mo-to-enjoy"
 
   tags = {
     Environment = "dev"
