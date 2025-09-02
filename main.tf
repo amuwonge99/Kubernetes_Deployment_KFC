@@ -1,9 +1,16 @@
+#AWS Chosen
+#Managed Kubernetes (EKS)
+#available/scalable (multi-AZ VPC, autoscaling node groups)
+#Internet routing (public + private subnets, NAT gateway)
+#
+
 terraform {
+  
   required_version = ">= 1.3"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = "~> 5.0" 
     }
   }
 }
@@ -62,3 +69,11 @@ image_scanning_configuration {
   tags = { 
     Environment = "dev" } 
     }
+
+resource "aws_s3_bucket" "app_bucket" {
+  bucket = "kfc-bucket-for-henry-to-enjoy"
+
+  tags = {
+    Environment = "dev"
+  }
+}
