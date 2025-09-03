@@ -64,7 +64,10 @@ cluster_endpoint_private_access = false
   cluster_enabled_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
   cloudwatch_log_group_retention_in_days = 7
 
- 
+authentication_mode = "API_AND_CONFIG_MAP"
+enable_cluster_creator_admin_permissions = true
+
+
 
 
   tags = {
@@ -72,6 +75,7 @@ cluster_endpoint_private_access = false
     Terraform   = "true"
   }
 }
+
 resource "aws_ecr_repository" "app" {
   name = "your-app-name"
 image_scanning_configuration { 

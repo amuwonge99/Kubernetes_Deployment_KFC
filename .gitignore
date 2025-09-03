@@ -7,3 +7,4 @@ terraform.tfvars
 crash.log
 *.log
 README.md
+.terraform.tfstate.lock.info
