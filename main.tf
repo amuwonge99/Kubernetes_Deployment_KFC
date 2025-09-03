@@ -39,6 +39,7 @@ module "vpc" {
 }
 
 module "eks" {
+  
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.0"
 
@@ -46,6 +47,11 @@ module "eks" {
   cluster_version = "1.29"
   subnet_ids      = module.vpc.private_subnets
   vpc_id          = module.vpc.vpc_id
+
+cluster_endpoint_public_access  = true
+cluster_endpoint_private_access = false
+
+  
 
   eks_managed_node_groups = {
     default = {
@@ -57,6 +63,9 @@ module "eks" {
   }
   cluster_enabled_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
   cloudwatch_log_group_retention_in_days = 7
+
+ 
+
 
   tags = {
     Environment = "dev"
