@@ -1,9 +1,3 @@
-#AWS Chosen
-#Managed Kubernetes (EKS)
-#available/scalable (multi-AZ VPC, autoscaling node groups)
-#Internet routing (public + private subnets, NAT gateway)
-#
-
 terraform { 
 
   required_version = ">= 1.3"
@@ -35,6 +29,7 @@ module "vpc" {
 
   tags = {
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    Environment                             = "dev"
   }
 }
 
