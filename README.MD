@@ -1,9 +1,15 @@
-Muhammad abandoned us
+Core Requirements
+1. Can be AWS or Azure
+2. Can be managed service or built from scratch
+3. must be highly available and scalable (but manage costs)
+4. must be capable of routing from the internet (but secured)
+5. must be deployed from code
+6. code must be stored in version control
+7. Deployment of the cluster must be automated
 
-vauge plan
-
-1. set up an empty EKS cluster
-2. set up an configure jenkins to manange the CI/CD pipeline
-3. add the kuberneties for a simple ngnix web app
-4. add ALB and secuity groups / certs
-5. add logging and monitioring 
+Additional Requirements
+1. Create a service that can  deploy applications/services onto a Kubernetes cluster
+2. Deploy an application that uses a service and ingress
+3. application must be capable of being routed from the internet
+4. application must be monitored
+5. you must be able to perform zero downtime deployment of the application
