@@ -48,8 +48,8 @@ aws iam attach-role-policy \
   --region $AWS_REGION || true
 
 echo "Applying Kubernetes manifests"
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+kubectl apply -f app-deployment.yaml
+kubectl apply -f app-service.yaml
 
 echo "Restarting Kubernetes deployment 🙄"
 kubectl rollout restart deployment app || echo "Deployment 'app' not found"
