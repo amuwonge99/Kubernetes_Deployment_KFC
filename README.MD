@@ -28,3 +28,6 @@ Architecture Overview
 - Shell scripts (deploy.sh, kube.sh) - To apply manifests and delply AWS resources
 - A sample Node.js app (server.js) - App to be deployed to Kubernetes
 - Dockerfile - The container image used in the cluster
+
+Run the following command to configure kubectl to access the cluster
+aws eks update-kubeconfig --region us-east-1 --name kfc-cluster
